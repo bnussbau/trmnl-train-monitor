@@ -31,6 +31,6 @@ Route::get('/json', function () {
     return Journey::upcoming()->paginate(8);
 });
 
-//Route::get('/template', function () {
+// Route::get('/template', function () {
 //    return Trmnl::stripMarkup(view('trmnl.quadrant', ['journeys' => Journey::paginate(1)]));
-//});
+// });

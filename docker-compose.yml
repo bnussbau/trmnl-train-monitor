@@ -9,6 +9,8 @@ services:
             SSL_MODE: "off"
             AUTORUN_ENABLED: "true"
             PHP_OPCACHE_ENABLE: "1"
+            #OEBB_STATION_ID: "8101590"
+            #OEBB_STATION_NAME: "Wien Hbf. (Bst. 1-2)"
 #        volumes:
 #            - type: bind
 #              source: ./database/database.sqlite

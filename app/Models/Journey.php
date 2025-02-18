@@ -19,12 +19,13 @@ class Journey extends Model
     public function scopeUpcoming(Builder $query): Builder
     {
         $hiddenTracks = array_filter(explode(',', config('services.oebb.hidden_tracks', '')));
-        if (!empty($hiddenTracks)) {
+        if (! empty($hiddenTracks)) {
             $query->whereNotIn('track', $hiddenTracks);
         }
+
         return $query->whereBetween('timestamp_planned', [
             now()->setTimezone('Europe/Vienna')->addMinutes(intval(config('services.oebb.offset_minutes'))),
-            now()->setTimezone('Europe/Vienna')->addHours(2)
+            now()->setTimezone('Europe/Vienna')->addHours(2),
         ]);
     }
 }
