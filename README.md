@@ -163,6 +163,6 @@ docker exec -it trmnl-train-monitor php artisan key:generate && php artisan conf
 <div class="title_bar">
   <img class="image" src="https://usetrmnl.com/images/plugins/trmnl--render.svg"/>
   <span class="title">Train Monitor</span>
-  <span class="instance">updated at: {{ "now" | date: '%s' | plus: trmnl.user.utc_offset | date: "%Y-%m-%d %H:%M" }}</span>
+  <span class="instance">aktualisiert: {{ "now" | date: '%s' | plus: trmnl.user.utc_offset | date: "%Y-%m-%d %H:%M" }}</span>
 </div>
 ```
