@@ -31,6 +31,7 @@ Supported train companies:
 3. Go to your TRMNL Dashboard and create a new Private Plugin.
 4. Copy the Webhook URL.
 5. Copy the Liquid Markup from section [Liquid Markup](#liquid-markup)
+6. Run server as docker, docker-compose or LAMP stack.
 
 ### Docker
 
