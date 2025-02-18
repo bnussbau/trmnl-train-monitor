@@ -1,0 +1,3 @@
+#!/command/execlineb -P
+cd /var/www/html
+php /var/www/html/artisan schedule:work

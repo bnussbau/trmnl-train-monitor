@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'oebb' => [
+        'station_id' => env('OEBB_STATION_ID', '8101590'),
+        'station_name' => env('OEBB_STATION_NAME'),
+        'hidden_tracks' => env('OEBB_HIDDEN_TRACKS'),
+        'offset_minutes' => env('OEBB_SCHEDULE_OFFSET_MINUTES', 15),
+        'refresh_every_minutes' => env('OEBB_REFRESH_EVERY_MINUTES', 15),
+    ],
 ];

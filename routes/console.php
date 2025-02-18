@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+use App\Console\Commands\TrmnlPushWebhookCommand;
+use Illuminate\Support\Facades\Schedule;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote')->hourly();
+if (config('trmnl.data_strategy') === 'webhook') {
+    Schedule::command(TrmnlPushWebhookCommand::class, [])->cron(sprintf("*/%s * * * *", intval(config('services.oebb.refresh_every_minutes'))));
+}

@@ -1,0 +1,18 @@
+services:
+    php:
+        build:
+            context: .  # Verweist auf das aktuelle Verzeichnis
+            dockerfile: Dockerfile  # Dockerfile wird im aktuellen Verzeichnis verwendet
+        ports:
+            - "8080:8080"  # Lokaler Port 8085 wird auf Container-Port 8080 gemappt
+        environment:
+            SSL_MODE: "off"
+            AUTORUN_ENABLED: "true"
+            PHP_OPCACHE_ENABLE: "1"
+#        volumes:
+#            - type: bind
+#              source: ./database/database.sqlite
+#              target: /database/database.sqlite
+#            - type: bind
+#              source: ./.env
+#              target: /var/www/html/.env

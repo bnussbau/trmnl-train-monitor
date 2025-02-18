@@ -21,11 +21,10 @@ class OebbCrawler extends HttpCrawler
     {
         $loader = parent::loader($userAgent, $logger);
         $loader->robotsTxt()->ignoreWildcardRules();
-        $cache = new FileCache(storage_path('framework/cache') . '/crwlr');
+        $cache = new FileCache(storage_path('framework/cache').'/crwlr');
         $cache->ttl(new DateInterval('P20M'));
         $loader->setCache($cache);
+
         return $loader;
     }
-
-
 }

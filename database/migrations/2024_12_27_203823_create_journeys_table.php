@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     public function up(): void
     {
         Schema::create('journeys', function (Blueprint $table) {
@@ -18,6 +19,7 @@ return new class extends Migration {
             $table->boolean('cancelled')->nullable();
             $table->time('departure_time_est')->nullable();
             $table->string('status')->nullable();
+            $table->timestamp('timestamp_planned')->nullable();
             $table->timestamps();
         });
     }
