@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\OebbFetchJob;
 use App\Models\Journey;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Route::get('/quadrant', function () {
 });
 
 Route::get('/json', function () {
+    OebbFetchJob::dispatchSync();
+    \Log::debug('Data refreshed.');
     return Journey::upcoming()->paginate(8);
 });
 
