@@ -31,8 +31,15 @@ Route::get('/quadrant', function () {
 Route::get('/json', function () {
     OebbFetchJob::dispatchSync();
     \Log::debug('Data refreshed.');
+
     return Journey::upcoming()->paginate(8);
 });
+
+Route::any('/markup', function () {
+    return response()->json([
+        'markup' => view('trmnl.full', ['journeys' => Journey::upcoming()->paginate(8)])->render(),
+    ]);
+})->name('trmnl.render');
 
 // Route::get('/template', function () {
 //    return Trmnl::stripMarkup(view('trmnl.quadrant', ['journeys' => Journey::paginate(1)]));
