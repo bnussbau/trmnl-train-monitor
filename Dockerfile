@@ -1,4 +1,4 @@
-FROM serversideup/php:8.3-fpm-nginx AS laravel
+FROM serversideup/php:8.4-fpm-nginx AS laravel
 
 WORKDIR /var/www/html
 
