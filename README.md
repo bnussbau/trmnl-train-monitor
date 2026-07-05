@@ -14,7 +14,7 @@ Supported train companies:
 |--------------------------------|-------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------|
 | `TRMNL_PLUGIN_TYPE`            | Plugin Type                               | `private`              | `public`, `private`                                                                                |
 | `TRMNL_DATA_STRATEGY`          | Data Strategy                             | `polling`              | `polling` , `webhook`                                                                              |
-| `TRMNL_WEBHOOK_URL`            | Webhook URL                               | `null`                 | `https://usetrmnl.com/api/custom_plugins/{{$uuid}}`                                                |
+| `TRMNL_WEBHOOK_URL`            | Webhook URL                               | `null`                 | `https://trmnl.com/api/custom_plugins/{{$uuid}}`                                                |
 | `OEBB_STATION_ID`              | ÖBB Station ID                            | `8101590`              | Default Vienna Main Station. Grab your station id from https://fahrplan.oebb.at/bin/stboard.exe/dn |
 | `OEBB_STATION_NAME`            | ÖBB Station Name                          | `Wien Hbf. (Bst. 1-2)` |                                                                                                    |
 | `OEBB_HIDDEN_TRACKS`           | Tracks that should be hidden from monitor | `null`                 | `1,2,3`                                                                                            |
@@ -43,7 +43,7 @@ docker run -p 8080:8080 --name trmnl-train-monitor \
 -e OEBB_STATION_ID=8101590 \
 -e OEBB_STATION_NAME="Wien Hbf. (Bst. 1-2)" \
 -e TRMNL_DATA_STRATEGY=webhook \
--e TRMNL_WEBHOOK_URL="https://usetrmnl.com/api/custom_plugins/${YOUR_UUID}" \
+-e TRMNL_WEBHOOK_URL="https://trmnl.com/api/custom_plugins/${YOUR_UUID}" \
 bnussbau/trmnl-train-monitor:latest 
 ```
 
@@ -63,7 +63,7 @@ services:
             OEBB_STATION_ID: "8101590"
             OEBB_STATION_NAME: "Wien Hbf. (Bst. 1-2)"
             TRMNL_DATA_STRATEGY: "webhook"
-            TRMNL_WEBHOOK_URL: "https://usetrmnl.com/api/custom_plugins/${YOUR_UUID}"
+            TRMNL_WEBHOOK_URL: "https://trmnl.com/api/custom_plugins/${YOUR_UUID}"
 ```
 
 ## Build locally
@@ -161,7 +161,7 @@ docker exec -it trmnl-train-monitor php artisan key:generate && php artisan conf
   </table>
 </div>
 <div class="title_bar">
-  <img class="image" src="https://usetrmnl.com/images/plugins/trmnl--render.svg"/>
+  <img class="image" src="https://trmnl.com/images/plugins/trmnl--render.svg"/>
   <span class="title">Train Monitor</span>
   <span class="instance">aktualisiert: {{ "now" | date: '%s' | plus: trmnl.user.utc_offset | date: "%Y-%m-%d %H:%M" }}</span>
 </div>
