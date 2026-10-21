@@ -2,8 +2,8 @@ FROM serversideup/php:8.4-fpm-nginx AS laravel
 
 WORKDIR /var/www/html
 
-COPY --chown=www-data:www-data ./docker/etc/s6-overlay/s6-rc.d/laravel-queue /etc/s6-overlay/s6-rc.d/laravel-queue
-COPY --chown=www-data:www-data ./docker/etc/s6-overlay/s6-rc.d/user/contents.d /etc/s6-overlay/s6-rc.d/user/contents.d
+COPY --chown=www-data:www-data ./docker/etc/s6-overlay/user-bundles.d/laravel-queue /etc/s6-overlay/user-bundles.d/laravel-queue
+COPY --chown=www-data:www-data ./docker/etc/s6-overlay/user-bundles.d/user/contents.d /etc/s6-overlay/user-bundles.d/user/contents.d
 
 COPY --chown=www-data:www-data . .
 COPY --chown=www-data:www-data ./.env.example ./.env
