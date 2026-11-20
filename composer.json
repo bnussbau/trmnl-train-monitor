@@ -14,7 +14,8 @@
         "bnussbau/laravel-trmnl": "^2.3",
         "bnussbau/laravel-trmnl-blade": "^3.1",
         "laravel/framework": "^13.0",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
